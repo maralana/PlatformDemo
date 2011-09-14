@@ -35,4 +35,4 @@ h2. Installation
 
 h2. Help
 
-We're the first to admit its not that easy to get started... So don't be afraid to get in touch, ask for help, or tell us we're rubbish! Email "matthew.warneford@dubitplatform.com":mailto:matthew.warneford@dubitplatform.com 
+We have a Wiki:http://info.dubitplatform.com which might help, but we're the first to admit its not that easy to get started... So don't be afraid to get in touch, ask for help, or tell us we're rubbish! Email "matthew.warneford@dubitplatform.com":mailto:matthew.warneford@dubitplatform.com 
