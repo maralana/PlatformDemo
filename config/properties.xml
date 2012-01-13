@@ -7,7 +7,7 @@
   <environment type="all">
     <property name="setting.useServer" value="true"/>
     <property name="setting.rooms.path" value="config/rooms/"/>
-    <property name="setting.rooms.default-room" value="village"/>
+    <property name="setting.rooms.default-room" value="beanstalk"/>
     
     <property name="path.create-avatar" value="[path.web-services]/users/{userID}/avatars.nexus"/>
     <property name="path.first-avatar" value="[path.web-services]/users/{userID}/avatars/first.nexus"/>

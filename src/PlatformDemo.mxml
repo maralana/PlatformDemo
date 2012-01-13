@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <app:NexusBase
-	width="100%" height="100%" minHeight="550" minWidth="1000" 
+	width="100%" height="100%" minHeight="750" minWidth="1000" 
 	layout="absolute" 
 	creationComplete="onCreationComplete()"
 	xmlns:mx="http://www.adobe.com/2006/mxml" 
@@ -85,14 +85,14 @@
 
 	<mx:Canvas width="100%" height="100%" verticalScrollPolicy="off">
 
-		<ui:ChatRoomSkinContainer id="chatRoomSkinContainer" width="850" height="400" y="100" backgroundColor="black" horizontalScrollPolicy="off" verticalScrollPolicy="off" horizontalCenter="0"/>
-		<chat:ChatSkinContainer id="chatSkinContainer" width="850" height="30" y="515" horizontalCenter="0" />
-		<skin:BasicSkinContainer containerID="menuContainer" width="850" height="400" y="100" horizontalCenter="0" />
-		<verb:VerbSkinContainer id="verbSkinContainer" width="850" height="400" y="100" horizontalCenter="0" />	
-		<skin:BasicSkinContainer id="quickChatSkinContainer" containerID="quickChatContainer" width="850" height="400" y="100" horizontalCenter="0"/>	
-		<video:VideosSkinContainer id="videoContainer" outEffect="{fadeOutEffect}" width="850" height="400" horizontalCenter="0" y="100"/>
-		<ui:ChatRoomPreloaderSkinContainer id="chatRoomPreloaderContainer" width="850" height="400" y="100" mouseEnabled="false" horizontalCenter="0" />
-		<minigame:MinigameSkinContainer width="850" height="445" y="100" mouseEnabled="false" horizontalCenter="0" />
+		<ui:ChatRoomSkinContainer id="chatRoomSkinContainer" width="850" height="600" y="100" backgroundColor="black" horizontalScrollPolicy="off" verticalScrollPolicy="off" horizontalCenter="0"/>
+		<chat:ChatSkinContainer id="chatSkinContainer" width="850" height="30" y="715" horizontalCenter="0" />
+		<skin:BasicSkinContainer containerID="menuContainer" width="850" height="600" y="100" horizontalCenter="0" />
+		<verb:VerbSkinContainer id="verbSkinContainer" width="850" height="600" y="100" horizontalCenter="0" />	
+		<skin:BasicSkinContainer id="quickChatSkinContainer" containerID="quickChatContainer" width="850" height="600" y="100" horizontalCenter="0"/>	
+		<video:VideosSkinContainer id="videoContainer" outEffect="{fadeOutEffect}" width="850" height="600" horizontalCenter="0" y="100"/>
+		<ui:ChatRoomPreloaderSkinContainer id="chatRoomPreloaderContainer" width="850" height="600" y="100" mouseEnabled="false" horizontalCenter="0" />
+		<!--minigame:MinigameSkinContainer width="850" height="445" y="100" mouseEnabled="false" horizontalCenter="0" /-->
 		<growl:StackingGrowlSkinContainer width="800" height="350" y="125" horizontalCenter="0" mouseEnabled="false" />
 		
 		<mx:ControlBar id="bar" width="850" horizontalCenter="0" y="60" height="30" paddingLeft="5">
@@ -106,7 +106,7 @@
 		</mx:ControlBar>
 				
 		<skin:BasicSkinContainer containerID="shopContainer" width="100%" height="100%"/>
-		<dialogue:DialogueSkinContainer id="dialogueSkinContainer" outEffect="{fadeOutEffect}" inEffect="{fadeInEffect}" horizontalCenter="0" width="850" height="400" y="100"/>				
+		<dialogue:DialogueSkinContainer id="dialogueSkinContainer" outEffect="{fadeOutEffect}" inEffect="{fadeInEffect}" horizontalCenter="0" width="850" height="600" y="100"/>				
 		<skin:BasicSkinContainer containerID="worldOverlay" width="840" height="398" y="100" horizontalCenter="0" />
 	</mx:Canvas>
 	
