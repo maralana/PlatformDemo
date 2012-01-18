@@ -6,7 +6,7 @@
 	<CollisionMap id="walkableArea" assetID="hit_asset" />
 
 	<Filters id="playerFilters">
-		<DepthFilter id="playerDepthFilter" scaleBack="0.7" scaleFront="0.7"/>
+		<DepthFilter id="playerDepthFilter" scaleBack="0.3" scaleFront="0.7"/>
 	</Filters>
 	
 	<Sounds target="{Room.player}">
@@ -32,10 +32,10 @@
 		<DisplayObject2D id="click" assetID="click_asset" mouseEnabled="true" clickThrough="true" alpha="0"/>
 		
 		<ZSortingDisplayObject id="furniture">
-			<DisplayObject2D id="well" assetID="well_asset" x="1312" y="({Room.well.originY}+{434})" originX="46" originY="155" />
-			<DisplayObject2D id="house" assetID="house_asset" x="1003" y="({Room.house.originY}+{144})" originX="269" originY="426" />
-			<DisplayObject2D id="beanstalk" assetID="beanstalk_asset" x="468" y="({Room.beanstalk.originY}+{-31})" originX="169" originY="583" />
-			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="60" />
+			<DisplayObject2D id="well" assetID="well_asset" x="1312" y="({Room.well.originY}+{434})" originX="46" originY="140" />
+			<DisplayObject2D id="house" assetID="house_asset" x="1003" y="({Room.house.originY}+{144})" originX="269" originY="354" />
+			<DisplayObject2D id="beanstalk" assetID="beanstalk_asset" x="468" y="({Room.beanstalk.originY}+{-14})" originX="169" originY="508" visible="false"/>
+			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="55" />
 			<DisplayObject2D id="sign" assetID="sign_asset" x="151" y="({Room.sign.originY}+{536})" originX="74" originY="211" />
 			<DisplayObject2D id="mushroom_10" assetID="mushroom_10_asset" x="1384" y="({Room.mushroom_10.originY}+{725})" originX="71" originY="121" />
 			<DisplayObject2D id="mushroom_9" assetID="mushroom_9_asset" x="847" y="({Room.mushroom_9.originY}+{724})" originX="33" originY="58" />
@@ -43,14 +43,29 @@
 			<DisplayObject2D id="mushroom_7" assetID="mushroom_7_asset" x="1464" y="({Room.mushroom_7.originY}+{546})" originX="28" originY="46" />
 			<DisplayObject2D id="mushroom_6" assetID="mushroom_6_asset" x="1416" y="({Room.mushroom_6.originY}+{565})" originX="17" originY="29" />
 			<DisplayObject2D id="mushroom_5" assetID="mushroom_5_asset" x="600" y="({Room.mushroom_5.originY}+{530})" originX="12" originY="20" />
-			<DisplayObject2D id="mushroom_4" assetID="mushroom_4_asset" x="582" y="({Room.mushroom_4.originY}+{500})" originX="28" originY="46" />
+			<DisplayObject2D id="mushroom_4" assetID="mushroom_4_asset" x="582" y="({Room.mushroom_4.originY}+{500})" originX="28" originY="43" />
 			<DisplayObject2D id="mushroom_3" assetID="mushroom_3_asset" x="534" y="({Room.mushroom_3.originY}+{519})" originX="17" originY="29" />
 			<DisplayObject2D id="mushroom_2" assetID="mushroom_2_asset" x="176" y="({Room.mushroom_2.originY}+{698})" originX="25" originY="41" />
 			<DisplayObject2D id="mushroom_1" assetID="mushroom_1_asset" x="125" y="({Room.mushroom_1.originY}+{699})" originX="30" originY="56" />
-			<DisplayObject2D id="stump" assetID="stump_asset" x="1006" y="({Room.stump.originY}+{648})" originX="88" originY="162" />
+			<DisplayObject2D id="stump" assetID="stump_asset" x="1006" y="({Room.stump.originY}+{648})" originX="88" originY="132" />
+			<DisplayObject2D id="bridge_front" assetID="bridge_front_asset" x="333" y="759" originY="200" />
+			<DisplayObject2D id="bridge_back" assetID="bridge_back_asset" x="277" y="635" originY="96" />
+			<DisplayObject2D id="flowers_4" assetID="flowers_4_asset" x="873" y="767" originX="42" originY="63" />
+			<DisplayObject2D id="flowers_3" assetID="flowers_3_asset" x="781" y="954" originX="156" originY="172" />
+			<DisplayObject2D id="flowers_2" assetID="flowers_2_asset" x="128" y="677" originX="35" originY="60" />
+			<DisplayObject2D id="flowers_1" assetID="flowers_1_asset" x="226" y="926" originX="147" originY="178" />
 		</ZSortingDisplayObject>
 		
-		<DisplayObject2D id="foreground" assetID="foreground_asset" x="0" y="0" originX="0" originY="0" mouseEnabled="false"/>
+<!--		<DisplayObject2D id="coll_1" assetID="coll_1_asset" x="572" y="617" collidable="true" distance="170" alpha="1"/>-->
+		
+		<ParallaxLayer id="front_layer" mouseEnabled="false" xm="1.2" ym="1">
+			<DisplayObject2D id="foreground_tree_3" assetID="foreground_tree_3_asset" x="1160" y="0" />
+			<DisplayObject2D id="foreground_tree_2" assetID="foreground_tree_2_asset" x="893" y="0" />
+			<DisplayObject2D id="foreground_tree_1" assetID="foreground_tree_1_asset" x="0" y="0" />
+			<DisplayObject2D id="fore_left" assetID="fore_left_asset" x="0" y="709" />
+			<DisplayObject2D id="fore_right" assetID="fore_right_asset" x="712" y="555" />
+		</ParallaxLayer>
+		
 		<ZSortingDisplayObject id="playerMessages"/>
 	</Scene>
 	
@@ -78,106 +93,32 @@
 		<Asset id="mushroom_2_asset" url="images/beanstalk/mushroom_2.png" />
 		<Asset id="mushroom_1_asset" url="images/beanstalk/mushroom_1.png" />
 		<Asset id="stump_asset" url="images/beanstalk/stump.png" />
-	</Assets>
-	
-	<Trigger gameObject="{Room}" event="OnClick">
-		<PlaySound sound="{Sounds.pop_effect}"/>
-	</Trigger>
+		<Asset id="bridge_front_asset" url="images/beanstalk/bridge_front.png" />
+		<Asset id="bridge_back_asset" url="images/beanstalk/bridge_back.png" />
+		<Asset id="flowers_4_asset" url="images/beanstalk/flowers_4.png" />
+		<Asset id="flowers_3_asset" url="images/beanstalk/flowers_3.png" />
+		<Asset id="flowers_2_asset" url="images/beanstalk/flowers_2.png" />
+		<Asset id="flowers_1_asset" url="images/beanstalk/flowers_1.png" />
+		<Asset id="foreground_tree_3_asset" url="images/beanstalk/foreground_tree_3.png" />
+		<Asset id="foreground_tree_2_asset" url="images/beanstalk/foreground_tree_2.png" />
+		<Asset id="foreground_tree_1_asset" url="images/beanstalk/foreground_tree_1.png" />
+		<Asset id="fore_left_asset" url="images/beanstalk/fore_left.png" />
+		<Asset id="fore_right_asset" url="images/beanstalk/fore_right.png" />
+		<Asset id="coll_1_asset" url="images/beanstalk/coll_1.png" />
+	</Assets>	
 	
 	<Trigger gameObject="{Room.click}" event="onClick">
 		<MoveTo gameObject="{Room.player}" targetX="{Event.x}" targetY="{Event.y}" />
 	</Trigger>
 	
-	<Trigger gameObject="{Room}" event="OnMouseOver">
-		<If expression="({Event.origin.verbEnabled}=={true})">
-			<Then>
-				<PlaySound sound="{Sounds.pop_effect}"/>
-			</Then>	
-		</If>	
-	</Trigger>		
+<!--	<GameObject id="playerName" name="" />-->
+<!--	<Trigger gameObject="{Room.coll_1}" event="OnEnterCollision">-->
+<!--		<SetValues target="{Room.playerName}" name="{Room.player.name}" />-->
+<!--		<SetValues target="{Room.player}" name="" />-->
+<!--	</Trigger>-->
+<!--	<Trigger gameObject="{Room.coll_1}" event="OnExitCollision">-->
+<!--		<Trace message="{Room.playerName.name}" />-->
+<!--		<SetValues target="{Rooms.currentRoom.player}" name="Jon" />-->
+<!--	</Trigger>-->
 	
-	<Trigger gameObject="{Room.apple}" event="OnPickUp">
-		<MoveTo targetX="{Event.gameObject.x}" targetY="{Event.gameObject.y}">
-			<Complete>
-				<OpenActivityBar activityBar="collecting" targettedGameObject="{Event.gameObject}"/>
-			</Complete>
-		</MoveTo>
-	</Trigger>
-	
-	<Trigger gameObject="{Room.apple}" event="OnLookAt">
-		<ShowBubble message="An apple a day..."/>
-	</Trigger>	
-	
-	<Trigger gameObject="{Room.pear}" event="OnPickUp">
-		<MoveTo targetX="{Event.gameObject.x}" targetY="{Event.gameObject.y}">
-			<Complete>
-				<OpenActivityBar activityBar="collecting" targettedGameObject="{Event.gameObject}"/>
-			</Complete>
-		</MoveTo>
-	</Trigger>
-	
-	<Trigger gameObject="{Room.pear}" event="OnLookAt">
-		<ShowBubble message="Is that a pear for my fruit collection?"/>
-	</Trigger>	
-	
-	<Trigger gameObject="{Room.apricot}" event="OnPickUp">
-		<MoveTo targetX="{Event.gameObject.x}" targetY="{Event.gameObject.y}">
-			<Complete>
-				<OpenActivityBar activityBar="collecting" targettedGameObject="{Event.gameObject}"/>
-			</Complete>	
-		</MoveTo>	
-	</Trigger>
-	
-	<Trigger gameObject="{Room.apricot}" event="OnLookAt">
-		<ShowBubble message="It looks like a juicy apricot to add to my fruit collection"/>
-	</Trigger>	
-	
-	<Trigger gameObject="{Room.orange}" event="OnPickUp">
-		<MoveTo targetX="{Event.gameObject.x}" targetY="{Event.gameObject.y}">
-			<Complete>
-				<OpenActivityBar activityBar="collecting" targettedGameObject="{Event.gameObject}"/>
-			</Complete>
-		</MoveTo>
-	</Trigger>				
-
-	<Trigger gameObject="{Room.orange}" event="OnLookAt">
-		<ShowBubble message="It looks like an orange to add to my fruit collection"/>
-	</Trigger>				
-
-	<Trigger event="OnLookAt" gameObject="{Room.lechuck}">
-		<ShowBubble message="It's LeChuck, an undead pirate captain. Look, he's even got a full beard, large captain hat with feather, sword, and speaks like a pirate!"/>
-	</Trigger>	
-	
-	<Trigger event="OnTalkTo" gameObject="{Room.lechuck}">
-		<MoveTo targetX="({Event.gameObject.x}+{50})" targetY="({Event.gameObject.y}+{30})">
-			<Complete>
-				<BeginDialogue statement="{Room.talkToLeChuck}" npc="{Event.gameObject}"/>
-				<AddContactAsFriend contact="{Contacts.lechuck_contact}" useServer="false" />
-			</Complete>
-		</MoveTo>
-	</Trigger>
-		
-	<Statement id="talkToLeChuck" message1="Aye, any who be you? And what do you think you be doin' in these parts? Ye'll ne'er get me buried booty!">
-		<Response message="Keep calm, I'm only here to learn about the Dubit Platform">
-			<Statement message="Arrr, good answer landlubber. Before I tell ye about my tails o' swashbucklin, booty, and the Dubit Platform Me need t' fill this great, grand ol' hole in my stomach. Go find me an orange, a pear, an apple, and a apricot, the base in'redients for grog, and I'll tell you all you want t' know. Aye, me parrot concurs.">
-				<Response message="Yes sir, pirate sir!">
-					<BeginQuest quest="{Quests.fruitQuest}" delay="1000"/>
-				</Response>	
-			</Statement>		
-		</Response>
-		<Response message="I don't want your stinking treasure!">
-			<Statement message="Ahoy, they all want my booty, dont kid yourself landlubber. But Me want some grog, go find me an orange, a pear, an apple, and a apricot, the base in'redients for grog. Aye, me parrot concurs.">
-				<Response message="Sounds delicious!">
-					<BeginQuest quest="{Quests.fruitQuest}" delay="1000"/>
-				</Response>	
-			</Statement>		
-		</Response>	
-		<Response message="What is there to do around here?">
-			<Statement message="Ahoy, thar's jobs for me t' do, Captain Le Chuck, no go make your self useful and find me an orange, a pear, an apple, and a apricot, the base in'redients for grog, argh! ">
-				<Response message="Well I do like the sound of grog...">
-					<BeginQuest quest="{Quests.fruitQuest}" delay="1000"/>
-				</Response>	
-			</Statement>		
-		</Response>			
-	</Statement>
 </ChatRoom>	
