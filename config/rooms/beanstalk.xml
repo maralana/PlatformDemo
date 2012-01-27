@@ -14,7 +14,7 @@
 		<Sound id="pop_effect" assetID="pop_effect_asset" play="false" looping="false"/>
 	</Sounds>
 
-	<Scene id="scene" target="{Room.player}" viewportWidth="850" viewportHeight="600" width="1500" height="900">
+	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="678" width="1500" height="900">
 		
 		<ParallaxLayer id="sky_layer" mouseEnabled="false" xm="0.4" ym="0.4">
 			<DisplayObject2D id="sky" assetID="sky_asset" mouseEnabled="false"/>
@@ -48,7 +48,7 @@
 			<DisplayObject2D id="mushroom_2" assetID="mushroom_2_asset" x="176" y="({Room.mushroom_2.originY}+{698})" originX="25" originY="41" />
 			<DisplayObject2D id="mushroom_1" assetID="mushroom_1_asset" x="125" y="({Room.mushroom_1.originY}+{699})" originX="30" originY="56" />
 			<DisplayObject2D id="stump" assetID="stump_asset" x="1006" y="({Room.stump.originY}+{648})" originX="88" originY="132" />
-			<DisplayObject2D id="bridge_front" assetID="bridge_front_asset" x="333" y="759" originY="200" />
+			<DisplayObject2D id="bridge_front" assetID="bridge_front_asset" x="333" y="789" originY="230" />
 			<DisplayObject2D id="bridge_back" assetID="bridge_back_asset" x="277" y="635" originY="96" />
 			<DisplayObject2D id="flowers_4" assetID="flowers_4_asset" x="873" y="767" originX="42" originY="63" />
 			<DisplayObject2D id="flowers_3" assetID="flowers_3_asset" x="781" y="954" originX="156" originY="172" />
@@ -60,7 +60,7 @@
 		
 		<ParallaxLayer id="front_layer" mouseEnabled="false" xm="1.2" ym="1">
 			<DisplayObject2D id="foreground_tree_3" assetID="foreground_tree_3_asset" x="1160" y="0" />
-			<DisplayObject2D id="foreground_tree_2" assetID="foreground_tree_2_asset" x="893" y="0" />
+			<DisplayObject2D id="foreground_tree_2" assetID="foreground_tree_2_asset" x="859" y="0" />
 			<DisplayObject2D id="foreground_tree_1" assetID="foreground_tree_1_asset" x="0" y="0" />
 			<DisplayObject2D id="fore_left" assetID="fore_left_asset" x="0" y="709" />
 			<DisplayObject2D id="fore_right" assetID="fore_right_asset" x="712" y="555" />
