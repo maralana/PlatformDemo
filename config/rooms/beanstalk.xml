@@ -14,7 +14,7 @@
 		<Sound id="pop_effect" assetID="pop_effect_asset" play="false" looping="false"/>
 	</Sounds>
 
-	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="678" width="1500" height="900">
+	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="768" width="1500" height="900">
 		
 		<ParallaxLayer id="sky_layer" mouseEnabled="false" xm="0.4" ym="0.4">
 			<DisplayObject2D id="sky" assetID="sky_asset" mouseEnabled="false"/>
@@ -34,8 +34,8 @@
 		<ZSortingDisplayObject id="furniture">
 			<DisplayObject2D id="well" assetID="well_asset" x="1312" y="({Room.well.originY}+{434})" originX="46" originY="140" />
 			<DisplayObject2D id="house" assetID="house_asset" x="1003" y="({Room.house.originY}+{144})" originX="269" originY="354" />
-			<DisplayObject2D id="beanstalk" assetID="beanstalk_asset" x="468" y="({Room.beanstalk.originY}+{-14})" originX="169" originY="508" visible="false"/>
-			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="55" />
+<!--			<DisplayObject2D id="beanstalk" assetID="beanstalk_asset" x="468" y="({Room.beanstalk.originY}+{-14})" originX="169" originY="508" visible="false"/>-->
+			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="55" mouseEnabled="true" useHandCursor="true"/>
 			<DisplayObject2D id="sign" assetID="sign_asset" x="151" y="({Room.sign.originY}+{536})" originX="74" originY="211" />
 			<DisplayObject2D id="mushroom_10" assetID="mushroom_10_asset" x="1384" y="({Room.mushroom_10.originY}+{725})" originX="71" originY="121" />
 			<DisplayObject2D id="mushroom_9" assetID="mushroom_9_asset" x="847" y="({Room.mushroom_9.originY}+{724})" originX="33" originY="58" />
@@ -54,6 +54,8 @@
 			<DisplayObject2D id="flowers_3" assetID="flowers_3_asset" x="781" y="954" originX="156" originY="172" />
 			<DisplayObject2D id="flowers_2" assetID="flowers_2_asset" x="128" y="677" originX="35" originY="60" />
 			<DisplayObject2D id="flowers_1" assetID="flowers_1_asset" x="226" y="926" originX="147" originY="178" />
+			<DisplayObject2D id="beanstalk" assetURL="images/beanstalk/beanstalk.swf" x="130" y="525" originY="565" />
+			
 		</ZSortingDisplayObject>
 		
 <!--		<DisplayObject2D id="coll_1" assetID="coll_1_asset" x="572" y="617" collidable="true" distance="170" alpha="1"/>-->
@@ -107,8 +109,17 @@
 		<Asset id="coll_1_asset" url="images/beanstalk/coll_1.png" />
 	</Assets>	
 	
+	<Triggers>
+		<onFixup>
+		</onFixup>
+	</Triggers>
+	
 	<Trigger gameObject="{Room.click}" event="onClick">
 		<MoveTo gameObject="{Room.player}" targetX="{Event.x}" targetY="{Event.y}" />
+	</Trigger>
+	
+	<Trigger gameObject="{Room.egg}" event="onClick">
+		<GotoAndPlay gameObject="{Room.beanstalk}" frame="2"/>
 	</Trigger>
 	
 <!--	<GameObject id="playerName" name="" />-->

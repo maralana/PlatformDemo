@@ -85,13 +85,13 @@
 
 	<mx:Canvas width="100%" height="100%" verticalScrollPolicy="off">
 
-		<ui:ChatRoomSkinContainer id="chatRoomSkinContainer" width="1024" height="678" y="100" backgroundColor="black" horizontalScrollPolicy="off" verticalScrollPolicy="off" horizontalCenter="0"/>
-		<chat:ChatSkinContainer id="chatSkinContainer" width="1024" height="30" y="745" horizontalCenter="0" />
-		<skin:BasicSkinContainer containerID="menuContainer" width="1024" height="678" y="100" horizontalCenter="0" />
-		<verb:VerbSkinContainer id="verbSkinContainer" width="1024" height="678" y="100" horizontalCenter="0" />	
-		<skin:BasicSkinContainer id="quickChatSkinContainer" containerID="quickChatContainer" width="1024" height="678" y="100" horizontalCenter="0"/>	
-		<video:VideosSkinContainer id="videoContainer" outEffect="{fadeOutEffect}" width="1024" height="678" horizontalCenter="0" y="100"/>
-		<ui:ChatRoomPreloaderSkinContainer id="chatRoomPreloaderContainer" width="1024" height="678" y="100" mouseEnabled="false" horizontalCenter="0" />
+		<ui:ChatRoomSkinContainer id="chatRoomSkinContainer" width="1024" height="768" y="100" backgroundColor="black" horizontalScrollPolicy="off" verticalScrollPolicy="off" horizontalCenter="0"/>
+		<chat:ChatSkinContainer id="chatSkinContainer" width="1024" height="30" y="830" horizontalCenter="0" />
+		<skin:BasicSkinContainer containerID="menuContainer" width="1024" height="768" y="100" horizontalCenter="0" />
+		<verb:VerbSkinContainer id="verbSkinContainer" width="1024" height="768" y="100" horizontalCenter="0" />	
+		<skin:BasicSkinContainer id="quickChatSkinContainer" containerID="quickChatContainer" width="1024" height="768" y="100" horizontalCenter="0"/>	
+		<video:VideosSkinContainer id="videoContainer" outEffect="{fadeOutEffect}" width="1024" height="768" horizontalCenter="0" y="100"/>
+		<ui:ChatRoomPreloaderSkinContainer id="chatRoomPreloaderContainer" width="1024" height="768" y="100" mouseEnabled="false" horizontalCenter="0" />
 		<!--minigame:MinigameSkinContainer width="1024" height="445" y="100" mouseEnabled="false" horizontalCenter="0" /-->
 		<growl:StackingGrowlSkinContainer width="800" height="350" y="125" horizontalCenter="0" mouseEnabled="false" />
 		
@@ -106,7 +106,7 @@
 		</mx:ControlBar>
 				
 		<skin:BasicSkinContainer containerID="shopContainer" width="100%" height="100%"/>
-		<dialogue:DialogueSkinContainer id="dialogueSkinContainer" outEffect="{fadeOutEffect}" inEffect="{fadeInEffect}" horizontalCenter="0" width="1024" height="678" y="100"/>				
+		<dialogue:DialogueSkinContainer id="dialogueSkinContainer" outEffect="{fadeOutEffect}" inEffect="{fadeInEffect}" horizontalCenter="0" width="1024" height="768" y="100"/>				
 		<skin:BasicSkinContainer containerID="worldOverlay" width="840" height="398" horizontalCenter="0" verticalCenter="0"/>
 	</mx:Canvas>
 	

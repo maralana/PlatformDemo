@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Include xmlns:xi="http://www.w3.org/2001/XInclude">
 	<Menus>
-		<ContextMenu id="playerMenu" track="true" offsetX="100" closeOnTargetMove="true" offsetY="0">			
+		<ContextMenu id="playerMenu" track="true" offsetX="100" closeOnTargetMove="true" offsetY="0">
+			<MenuItem text="Reload Beanstalk" destination="beanstalk">
+				<Triggers>
+					<onMenuItemSelected><ChangeRoom roomName="{Event.menuItem.destination}" /></onMenuItemSelected>
+				</Triggers>
+			</MenuItem>			
 			<MenuItem text="Start Minigame API Tester">
 				<Triggers>
 					<onMenuItemSelected><OpenMinigame minigame="apiTester" /></onMenuItemSelected>
