@@ -11,6 +11,9 @@
 	
 	<Sounds target="{Room.player}" id="sounds">
 		<StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" />
+		<StreamingSound id="mushroom_10_sound" url="sounds/mushroom_10.mp3" play="false" looping="false" />
+		<StreamingSound id="mushroom_7_sound" url="sounds/mushroom_7.mp3" play="false" looping="false" />
+		<StreamingSound id="mushroom_4_sound" url="sounds/mushroom_4.mp3" play="false" looping="false" />
 	</Sounds>
 
 	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="768" width="1500" height="900">
@@ -34,15 +37,15 @@
 			<DisplayObject2D id="well" assetID="well_asset" x="1247" y="({Room.well.originY}+{429})" originY="140" mouseEnabled="true" useHandCursor="true" scale="0.95"/>
 			<DisplayObject2D id="house" assetID="house_asset" x="1003" y="({Room.house.originY}+{144})" originX="269" originY="354" />
 			<DisplayObject2D id="window" assetID="window_asset" x="867" y="({Room.window.originY}+{375})" originY="154" />
-			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="55" mouseEnabled="true" useHandCursor="true"/>
+			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="50" mouseEnabled="true" useHandCursor="true"/>
 			<DisplayObject2D id="sign" assetID="sign_asset" x="151" y="({Room.sign.originY}+{536})" originX="74" originY="211" />
-			<DisplayObject2D id="mushroom_10" assetURL="images/beanstalk/mushroom_10.png" x="1384" y="({Room.mushroom_10.originY}+{725})" originX="71" originY="121" mouseEnabled="true" useHandCursor="true"/>
+			<DisplayObject2D id="mushroom_10" assetURL="images/beanstalk/mushroom.swf" x="1324" y="({Room.mushroom_10.originY}+{685})" originX="71" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.7"/>
 			<DisplayObject2D id="mushroom_9" assetURL="images/beanstalk/mushroom_9.png" x="847" y="({Room.mushroom_9.originY}+{724})" originX="33" originY="58" mouseEnabled="true" useHandCursor="true"/>
 			<DisplayObject2D id="mushroom_8" assetURL="images/beanstalk/mushroom_8.png" x="1481" y="({Room.mushroom_8.originY}+{576})" originX="12" originY="19" mouseEnabled="true" useHandCursor="true"/>
-			<DisplayObject2D id="mushroom_7" assetURL="images/beanstalk/mushroom_7.png" x="1464" y="({Room.mushroom_7.originY}+{546})" originX="28" originY="46" mouseEnabled="true" useHandCursor="true"/>
+			<DisplayObject2D id="mushroom_7" assetURL="images/beanstalk/mushroom.swf" x="1414" y="({Room.mushroom_7.originY}+{440})" originX="28" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.5"/>
 			<DisplayObject2D id="mushroom_6" assetURL="images/beanstalk/mushroom_6.png" x="1416" y="({Room.mushroom_6.originY}+{565})" originX="17" originY="29" mouseEnabled="true" useHandCursor="true"/>
 			<DisplayObject2D id="mushroom_5" assetURL="images/beanstalk/mushroom_5.png" x="600" y="({Room.mushroom_5.originY}+{530})" originX="12" originY="20" mouseEnabled="true" useHandCursor="true"/>
-			<DisplayObject2D id="mushroom_4" assetURL="images/beanstalk/mushroom_4.png" x="582" y="({Room.mushroom_4.originY}+{500})" originX="28" originY="43" mouseEnabled="true" useHandCursor="true"/>
+			<DisplayObject2D id="mushroom_4" assetURL="images/beanstalk/mushroom.swf" x="532" y="({Room.mushroom_4.originY}+{394})" originX="28" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.5"/>
 			<DisplayObject2D id="mushroom_3" assetURL="images/beanstalk/mushroom_3.png" x="534" y="({Room.mushroom_3.originY}+{519})" originX="17" originY="29" mouseEnabled="true" useHandCursor="true"/>
 			<DisplayObject2D id="mushroom_2" assetURL="images/beanstalk/mushroom_2.png" x="176" y="({Room.mushroom_2.originY}+{698})" originX="25" originY="41" mouseEnabled="true" useHandCursor="true"/>
 			<DisplayObject2D id="mushroom_1" assetURL="images/beanstalk/mushroom_1.png" x="125" y="({Room.mushroom_1.originY}+{699})" originX="30" originY="56" mouseEnabled="true" useHandCursor="true"/>
@@ -143,44 +146,19 @@
 		<SetValues target="{Room.collisionStatus}" canPlay="true" delay="1000"/>
 	</Trigger>
 	
-	 <Trigger gameObject="{Room.mushroom_1}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
-	 </Trigger>
-	
-	 <Trigger gameObject="{Room.mushroom_2}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
-	 </Trigger>
-	
-	 <Trigger gameObject="{Room.mushroom_3}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
-	 </Trigger>
-	
 	 <Trigger gameObject="{Room.mushroom_4}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
-	 </Trigger>
-	
-	 <Trigger gameObject="{Room.mushroom_5}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
-	 </Trigger>
-	
-	 <Trigger gameObject="{Room.mushroom_6}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
+		<GotoAndPlay gameObject="{Room.mushroom_4}" frame="2" />
+		<PlaySound sound="{Room.mushroom_4_sound}" />
 	 </Trigger>
 	
 	 <Trigger gameObject="{Room.mushroom_7}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
-	 </Trigger>
-	
-	 <Trigger gameObject="{Room.mushroom_8}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
-	 </Trigger>
-	
-	 <Trigger gameObject="{Room.mushroom_9}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
+		<GotoAndPlay gameObject="{Room.mushroom_7}" frame="2" /> 
+		<PlaySound sound="{Room.mushroom_7_sound}" />
 	 </Trigger>
 	
 	 <Trigger gameObject="{Room.mushroom_10}" event="onClick">
-		<Alert message="{Event.handler.id}" />	 
+		<GotoAndPlay gameObject="{Room.mushroom_10}" frame="2" />
+		<PlaySound sound="{Room.mushroom_10_sound}" />
 	 </Trigger>
 
 	<BehaviourDefinition id="playAgain">
