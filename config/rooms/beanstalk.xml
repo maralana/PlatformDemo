@@ -14,11 +14,12 @@
 		<StreamingSound id="water_2" url="sounds/stream.mp3" play="false" looping="true" x="650" y="780" carry="300" strength="0.5"/>
 		<StreamingSound id="woodland_1" url="sounds/woodland.mp3" play="true" looping="true" strength="0.5"/>
 		<StreamingSound id="woodland_2" url="sounds/woodland.mp3" play="false" looping="true" strength="0.5"/>
-		<StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" />
+		<StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" strength="0.5"/>
 		<StreamingSound id="mushroom_10_sound" url="sounds/mushroom_10.mp3" play="false" looping="false" />
 		<StreamingSound id="mushroom_7_sound" url="sounds/mushroom_7.mp3" play="false" looping="false" />
 		<StreamingSound id="mushroom_4_sound" url="sounds/mushroom_4.mp3" play="false" looping="false" />
 		<StreamingSound id="winch" url="sounds/winch.mp3" play="false" looping="false" />
+		<StreamingSound id="rumble" url="sounds/rumble.mp3" play="false" looping="false" />
 	</Sounds>
 
 	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="768" width="1500" height="900">
@@ -39,18 +40,18 @@
 		<DisplayObject2D id="click" assetID="click_asset" mouseEnabled="true" clickThrough="true" alpha="0"/>
 	 
 		<ZSortingDisplayObject id="furniture">
-			<DisplayObject2D id="well" assetID="well_asset" x="1247" y="({Room.well.originY}+{429})" originY="140" mouseEnabled="true" useHandCursor="true" scale="0.95"/>
+			<DisplayObject2D id="well" assetID="well_asset" x="1247" y="({Room.well.originY}+{429})" originY="140" mouseEnabled="true" useHandCursor="true" scale="0.95" tooltip="Ye Olde Well"/>
 			<DisplayObject2D id="house" assetID="house_asset" x="1003" y="({Room.house.originY}+{144})" originX="269" originY="354" />
 			<DisplayObject2D id="window" assetID="window_asset" x="867" y="({Room.window.originY}+{375})" originY="154" />
 			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="50" />
 			<DisplayObject2D id="sign" assetID="sign_asset" x="151" y="({Room.sign.originY}+{536})" originX="74" originY="211" />
-			<DisplayObject2D id="mushroom_10" assetURL="images/beanstalk/mushroom.swf" x="1324" y="({Room.mushroom_10.originY}+{685})" originX="71" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.7" clicked="false"/>
+			<DisplayObject2D id="mushroom_10" assetURL="images/beanstalk/mushroom.swf" x="1324" y="({Room.mushroom_10.originY}+{665})" originX="71" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.7" clicked="false" tooltip="Musical Mushroom" />
 			<DisplayObject2D id="mushroom_9" assetURL="images/beanstalk/mushroom_9.png" x="847" y="({Room.mushroom_9.originY}+{724})" originX="33" originY="58" />
 			<DisplayObject2D id="mushroom_8" assetURL="images/beanstalk/mushroom_8.png" x="1481" y="({Room.mushroom_8.originY}+{576})" originX="12" originY="19" />
-			<DisplayObject2D id="mushroom_7" assetURL="images/beanstalk/mushroom.swf" x="1414" y="({Room.mushroom_7.originY}+{440})" originX="28" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.5" clicked="false"/>
+			<DisplayObject2D id="mushroom_7" assetURL="images/beanstalk/mushroom.swf" x="1414" y="({Room.mushroom_7.originY}+{440})" originX="28" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.5" clicked="false" tooltip="Musical Mushroom" />
 			<DisplayObject2D id="mushroom_6" assetURL="images/beanstalk/mushroom_6.png" x="1416" y="({Room.mushroom_6.originY}+{565})" originX="17" originY="29" />
 			<DisplayObject2D id="mushroom_5" assetURL="images/beanstalk/mushroom_5.png" x="600" y="({Room.mushroom_5.originY}+{530})" originX="12" originY="20" />
-			<DisplayObject2D id="mushroom_4" assetURL="images/beanstalk/mushroom.swf" x="532" y="({Room.mushroom_4.originY}+{394})" originX="28" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.5" clicked="false"/>
+			<DisplayObject2D id="mushroom_4" assetURL="images/beanstalk/mushroom.swf" x="532" y="({Room.mushroom_4.originY}+{394})" originX="28" originY="146" mouseEnabled="true" useHandCursor="true" mouseChildren="false" clickThrough="true" scale="0.5" clicked="false" tooltip="Musical Mushroom" />
 			<DisplayObject2D id="mushroom_3" assetURL="images/beanstalk/mushroom_3.png" x="534" y="({Room.mushroom_3.originY}+{519})" originX="17" originY="29" />
 			<DisplayObject2D id="mushroom_2" assetURL="images/beanstalk/mushroom_2.png" x="176" y="({Room.mushroom_2.originY}+{698})" originX="25" originY="41" />
 			<DisplayObject2D id="mushroom_1" assetURL="images/beanstalk/mushroom_1.png" x="125" y="({Room.mushroom_1.originY}+{699})" originX="30" originY="56" />
@@ -61,7 +62,7 @@
 			<DisplayObject2D id="flowers_3" assetID="flowers_3_asset" x="781" y="954" originX="156" originY="172" />
 			<DisplayObject2D id="flowers_2" assetID="flowers_2_asset" x="128" y="677" originX="35" originY="60" />
 			<DisplayObject2D id="flowers_1" assetID="flowers_1_asset" x="226" y="926" originX="147" originY="178" />
-			<DisplayObject2D id="beanstalk" assetURL="images/beanstalk/beanstalk.swf" x="130" y="525" originY="565" grown="false"/>
+			<DisplayObject2D id="beanstalk" assetURL="images/beanstalk/beanstalk.swf" x="130" y="525" originY="565" grown="false" tooltip="Magical Beanstalk" />
 			<DisplayObject2D id="fish" assetURL="images/beanstalk/fish.swf" x="610" y="720" originY="0" />
 		</ZSortingDisplayObject>
 		
@@ -194,9 +195,10 @@
 	<GameObject id="collisionStatus" currentFrame="0"/>
 
 	<BehaviourDefinition id="checkMushrooms">
-		<If type="and" expression1="({Room.mushroom_4.clicked} == {true})" expression2="({Room.mushroom_4.clicked} == {true})" expression3="({Room.mushroom_4.clicked} == {true})" expression4="({Room.beanstalk.grown} == {false})">
+		<If type="and" expression1="({Room.mushroom_4.clicked} == {true})" expression2="({Room.mushroom_7.clicked} == {true})" expression3="({Room.mushroom_10.clicked} == {true})" expression4="({Room.beanstalk.grown} == {false})">
 			<Then>
 				<GotoAndPlay gameObject="{Room.beanstalk}" frame="2" />
+				<PlaySound sound="{Room.rumble}" />
 				<SetValues target="{Room.beanstalk}" grown="true"/> 
 			</Then>
 		</If>
