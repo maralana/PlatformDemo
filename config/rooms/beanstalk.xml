@@ -14,6 +14,7 @@
 		<StreamingSound id="mushroom_10_sound" url="sounds/mushroom_10.mp3" play="false" looping="false" />
 		<StreamingSound id="mushroom_7_sound" url="sounds/mushroom_7.mp3" play="false" looping="false" />
 		<StreamingSound id="mushroom_4_sound" url="sounds/mushroom_4.mp3" play="false" looping="false" />
+		<StreamingSound id="winch" url="sounds/winch.mp3" play="false" looping="false" />
 	</Sounds>
 
 	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="768" width="1500" height="900">
@@ -115,6 +116,13 @@
 	<Triggers>
 		<onFixup>
 			<Call behaviourID="playFish" delay="({3000}~{7000})" />
+			<GotoAndStop gameObject="{Room.well}" frame="1"/>
+			<GotoAndStop gameObject="{Room.fish}" frame="1"/>
+			<GotoAndStop gameObject="{Room.mushroom_4}" frame="1"/>
+			<GotoAndStop gameObject="{Room.mushroom_7}" frame="1"/>
+			<GotoAndStop gameObject="{Room.mushroom_10}" frame="1"/>
+			<GotoAndStop gameObject="{Room.window}" frame="1"/>
+			<GotoAndStop gameObject="{Room.beanstalk}" frame="1"/>
 		</onFixup>
 	</Triggers>
 	
@@ -131,19 +139,31 @@
 		<GotoAndPlay gameObject="{Room.well}" frame="2"/>
 		<SetValues target="{Room.well}" mouseEnabled="false" useHandCursor="false" />
 		<SetValues target="{Room.well}" mouseEnabled="true" useHandCursor="true" delay="3000"/>
+		<PlaySound sound="{Room.winch}" />
 	</Trigger>
 	
-	<GameObject id="collisionStatus" insideCollision="false" canPlay="true"/>
+	<GameObject id="collisionStatus" insideCollision="false" canPlay="true" currentFrame="0"/>
 	
 	<Trigger gameObject="{Room.coll}" event="onEnterCollision">
-		<GotoAndPlay gameObject="{Room.window}" frame="2" if="({Room.collisionStatus.canPlay}=={true})"/>
-		<Call behaviourID="playAgain" if="({Room.collisionStatus.canPlay}=={false})"/>
+		<GotoAndPlay gameObject="{Room.window}" frame="({91} - {Room.collisionStatus.currentFrame})" if="({Room.collisionStatus.currentFrame}!={0})">
+			<Frame>
+				<GotoAndPlay gameObject="{Room.window}" frame="19" if="({Event.frame}=={74})" />
+			</Frame>
+		</GotoAndPlay>
+		<GotoAndPlay gameObject="{Room.window}" frame="2" if="({Room.collisionStatus.currentFrame}=={0})">
+			<Frame>
+				<GotoAndPlay gameObject="{Room.window}" frame="19" if="({Event.frame}=={74})" />
+			</Frame>
+		</GotoAndPlay>
 	</Trigger>
 	
 	<Trigger gameObject="{Room.coll}" event="onExitCollision">
-		<SetValues target="{Room.collisionStatus}" canPlay="false"/>
-		<GotoAndPlay gameObject="{Room.window}" frame="75" />
-		<SetValues target="{Room.collisionStatus}" canPlay="true" delay="1000"/>
+		<GotoAndPlay gameObject="{Room.window}" frame="75">
+			<Frame>
+				<SetValues target="{Room.collisionStatus}" currentFrame="{Event.frame}" />
+				<SetValues target="{Room.collisionStatus}" currentFrame="0" if="({Event.frame}=={92})" />
+			</Frame>
+		</GotoAndPlay>
 	</Trigger>
 	
 	 <Trigger gameObject="{Room.mushroom_4}" event="onClick">
