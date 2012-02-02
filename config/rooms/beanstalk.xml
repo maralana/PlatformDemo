@@ -33,7 +33,7 @@
 		<ZSortingDisplayObject id="furniture">
 			<DisplayObject2D id="well" assetID="well_asset" x="1247" y="({Room.well.originY}+{429})" originY="140" mouseEnabled="true" useHandCursor="true" scale="0.95"/>
 			<DisplayObject2D id="house" assetID="house_asset" x="1003" y="({Room.house.originY}+{144})" originX="269" originY="354" />
-			<DisplayObject2D id="windows" assetURL="images/beanstalk/windows.swf" x="867" y="({Room.windows.originY}+{377})" originY="141" />
+			<DisplayObject2D id="window" assetID="window_asset" x="867" y="({Room.window.originY}+{375})" originY="154" />
 			<DisplayObject2D id="egg" assetID="egg_asset" x="630" y="({Room.egg.originY}+{486})" originX="43" originY="55" mouseEnabled="true" useHandCursor="true"/>
 			<DisplayObject2D id="sign" assetID="sign_asset" x="151" y="({Room.sign.originY}+{536})" originX="74" originY="211" />
 			<DisplayObject2D id="mushroom_10" assetURL="images/beanstalk/mushroom_10.png" x="1384" y="({Room.mushroom_10.originY}+{725})" originX="71" originY="121" mouseEnabled="true" useHandCursor="true"/>
@@ -55,7 +55,6 @@
 			<DisplayObject2D id="flowers_1" assetID="flowers_1_asset" x="226" y="926" originX="147" originY="178" />
 			<DisplayObject2D id="beanstalk" assetURL="images/beanstalk/beanstalk.swf" x="130" y="525" originY="565" />
 			<DisplayObject2D id="fish" assetURL="images/beanstalk/fish.swf" x="610" y="720" originY="0" />
-			
 		</ZSortingDisplayObject>
 		
 		<DisplayObject2D id="coll" assetID="coll_1_asset" x="912" y="517" collidable="true" distance="170" alpha="0"/>
@@ -81,6 +80,7 @@
 		<Asset id="mid_trees_asset" url="images/beanstalk/mid_trees.png" />
 		<Asset id="well_asset" url="images/beanstalk/well.swf" />
 		<Asset id="house_asset" url="images/beanstalk/house.png" />
+		<Asset id="window_asset" url="images/beanstalk/windows.swf" />
 		<Asset id="beanstalk_asset" url="images/beanstalk/beanstalk.png" />
 		<Asset id="egg_asset" url="images/beanstalk/egg.png" />
 		<Asset id="sign_asset" url="images/beanstalk/sign.png" />
@@ -133,58 +133,58 @@
 	<GameObject id="collisionStatus" insideCollision="false" canPlay="true"/>
 	
 	<Trigger gameObject="{Room.coll}" event="onEnterCollision">
-		<GotoAndPlay gameObject="{Room.windows}" frame="2" if="({Room.collisionStatus.canPlay}=={true})"/>
+		<GotoAndPlay gameObject="{Room.window}" frame="2" if="({Room.collisionStatus.canPlay}=={true})"/>
 		<Call behaviourID="playAgain" if="({Room.collisionStatus.canPlay}=={false})"/>
 	</Trigger>
 	
 	<Trigger gameObject="{Room.coll}" event="onExitCollision">
 		<SetValues target="{Room.collisionStatus}" canPlay="false"/>
-		<GotoAndPlay gameObject="{Room.windows}" frame="75" />
+		<GotoAndPlay gameObject="{Room.window}" frame="75" />
 		<SetValues target="{Room.collisionStatus}" canPlay="true" delay="1000"/>
 	</Trigger>
 	
-	 <Trigger gameobject="mushroom_1" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_1}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_2" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_2}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_3" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_3}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_4" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_4}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_5" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_5}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_6" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_6}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_7" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_7}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_8" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_8}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_9" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_9}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 	
-	 <Trigger gameobject="mushroom_10" event="onClick">
+	 <Trigger gameObject="{Room.mushroom_10}" event="onClick">
 		<Alert message="{Event.handler.id}" />	 
 	 </Trigger>
 
 	<BehaviourDefinition id="playAgain">
-		<GotoAndPlay gameObject="{Room.house}" frame="2" if="({Room.collisionStatus.canPlay}=={true})"/>
+		<GotoAndPlay gameObject="{Room.window}" frame="2" if="({Room.collisionStatus.canPlay}=={true})"/>
 		<Call behaviourID="playAgain" if="({Room.collisionStatus.canPlay}=={false})" delay="500"/>
 	</BehaviourDefinition>
 
