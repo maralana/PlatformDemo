@@ -4,7 +4,7 @@
 	<xi:include href="room_notification_handler.xml" />	
 
 	<CollisionController target="{Room.player}" />
-	<MouseMovementController yVelocityScale="0.3" directions="4" />
+	<MouseMovementController yVelocityScale="0.3" directions="2" />
 	
 	<!-- Move the player when he clicks -->
 <!--	<Trigger event="onClick" gameObject="{Room.click}">-->

@@ -4,7 +4,7 @@ package com.dubitplatform.game
 	import flash.filters.GlowFilter;
 	import flash.text.TextFormat;
 	
-	import uk.co.dubit.graphics.render2D.NameBubble;
+	import uk.co.dubit.graphics.render2D.avatar.NameBubble;
 	
 	public class CartoonNameBubble extends NameBubble
 	{

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ChatRoom id="village" xmlns:xi="http://www.w3.org/2001/XInclude" startX="900" startY="600">
+
+	<xi:include href="includes/room_config.xml"/>
+		
+	<CollisionMap id="walkableArea" assetID="hit_asset" />
+
+	<Filters id="playerFilters">
+		<DepthFilter id="playerDepthFilter" scaleBack="0.6" scaleFront="1"/>
+		<LightMapFilter assetID="light_filter_asset" />
+	</Filters>
+	
+	<Sounds target="{Room.player}" id="sounds">
+		<StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" strength="0.3"/>
+	</Sounds>
+
+	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="768" width="1500" height="900">
+		
+		<ParallaxLayer mouseEnabled="false" xm="0.6" ym="0.6">
+			<DisplayObject2D assetID="outside_asset" mouseEnabled="false" x="-100"/>
+		</ParallaxLayer>
+			
+		<ParallaxLayer mouseEnabled="false" xm="0.8" ym="0.8">
+			<DisplayObject2D assetID="tree_asset" mouseEnabled="false" x="400" y="100"/>
+		</ParallaxLayer>
+	
+		<DisplayObject2D assetID="background_asset" mouseEnabled="false"/>
+		<DisplayObject2D id="click" assetID="click_asset" mouseEnabled="true" clickThrough="true" alpha="0"/>
+	 
+		<ZSortingDisplayObject id="furniture">
+			<DisplayObject2D id="hay_8" assetID="hay_8_asset" x="565" y="({Room.hay_8.originY}+{295})" originX="207" originY="135" />
+			<DisplayObject2D id="hay_7" assetID="hay_7_asset" x="336" y="({Room.hay_7.originY}+{287})" originX="198" originY="195" />
+			<DisplayObject2D id="hay_6" assetID="hay_6_asset" x="-2" y="({Room.hay_6.originY}+{208})" originX="242" originY="409" />
+			<DisplayObject2D id="hay_5" assetID="hay_5_asset" x="292" y="({Room.hay_5.originY}+{414})" originX="296" originY="200" />
+			<DisplayObject2D id="hay_4" assetID="hay_4_asset" x="133" y="({Room.hay_4.originY}+{489})" originX="399" originY="413" />
+			<DisplayObject2D id="hay_3" assetID="hay_3_asset" x="1077" y="({Room.hay_3.originY}+{325})" originX="181" originY="128" />
+			<DisplayObject2D id="hay_2" assetID="hay_2_asset" x="1392" y="({Room.hay_2.originY}+{310})" originX="258" originY="109" />
+			<DisplayObject2D id="hay_1" assetID="hay_1_asset" x="1650" y="({Room.hay_1.originY}+{465})" originX="456" originY="415" />
+			<DisplayObject2D id="beam_floor" assetID="beam_floor_asset" x="1816" y="({Room.beam_floor.originY}+{0})" originX="829" originY="505" />
+			<DisplayObject2D id="beam_roof" assetID="beam_roof_asset" x="891" y="({Room.beam_roof.originY}+{0})" originX="891" originY="1135" />
+			<DisplayObject2D id="wheel" assetID="wheel_asset" x="1072" y="({Room.wheel.originY}+{430})" originX="151" originY="287" />
+			<DisplayObject2D id="stool" assetID="stool_asset" x="851" y="({Room.stool.originY}+{515})" originX="46" originY="101" />
+		</ZSortingDisplayObject>
+		
+		
+		<ParallaxLayer mouseEnabled="false" xm="1.2" ym="1">
+
+		</ParallaxLayer>
+		
+		<ZSortingDisplayObject id="playerMessages"/>
+	</Scene>
+	
+	<Assets>
+        <Asset id="outside_asset" url="images/basement/outside.jpg" />
+		<Asset id="tree_asset" url="images/basement/tree.png" />
+		<Asset id="background_asset" url="images/basement/background.png" />
+		<Asset id="hay_8_asset" url="images/basement/hay_8.png" />
+		<Asset id="hay_7_asset" url="images/basement/hay_7.png" />
+		<Asset id="hay_6_asset" url="images/basement/hay_6.png" />
+		<Asset id="hay_5_asset" url="images/basement/hay_5.png" />
+		<Asset id="hay_4_asset" url="images/basement/hay_4.png" />
+		<Asset id="hay_3_asset" url="images/basement/hay_3.png" />
+		<Asset id="hay_2_asset" url="images/basement/hay_2.png" />
+		<Asset id="beam_floor_asset" url="images/basement/beam_floor.png" />
+		<Asset id="hay_1_asset" url="images/basement/hay_1.png" />
+		<Asset id="beam_roof_asset" url="images/basement/beam_roof.png" />
+		<Asset id="foreground_asset" url="images/basement/foreground.png" />
+		<Asset id="wheel_asset" url="images/basement/wheel.png" />
+		<Asset id="stool_asset" url="images/basement/stool.png" />
+		<Asset id="click_asset" url="images/basement/click.gif" />
+		<Asset id="hit_asset" url="images/basement/hit.gif" />
+	</Assets>	
+	
+	<Triggers>
+		<onFixup>
+		</onFixup>
+	</Triggers>
+	
+	<Trigger gameObject="{Room.click}" event="onClick">
+		<MoveTo gameObject="{Room.player}" targetX="{Event.x}" targetY="{Event.y}" />
+	</Trigger>
+
+	
+</ChatRoom>	

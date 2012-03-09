@@ -3,9 +3,9 @@ package com.dubitplatform.game
 	import flash.filters.DropShadowFilter;
 	import flash.text.TextFormat;
 	
-	import uk.co.dubit.graphics.render2D.types.DefaultChatBubble2D;
+	import uk.co.dubit.graphics.render2D.types.ChatBubble2D;
 
-	public class CartoonChatBubble extends DefaultChatBubble2D
+	public class CartoonChatBubble extends ChatBubble2D
 	{
 		[Embed(source="/../assets/fonts/Deeko_Comic.ttf", fontFamily="Deeko", embedAsCFF="false")]
 		private var deeko:String;		

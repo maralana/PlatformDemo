@@ -1555,7 +1555,7 @@
 		<Binding name="Scene" factory="uk.co.dubit.platform.scriptEngine.gameObject.GameObjectFactory" class="uk.co.dubit.platform.scriptEngine.gameObject.types.avatar.RenderGameObject">
 			<Attribute name="viewportHeight" defaultValue="{Properties.[scene-viewportHeight]}" required="true" description="The visible height of the scene"/>
 			<Attribute name="viewportWidth" defaultValue="{Properties.[scene-viewportWidth]}" required="true" description="The visible width of the scene"/>
-			<Attribute name="displayObjectClass" defaultValue="uk.co.dubit.graphics.render2D.Scene2D" />
+			<Attribute name="displayObjectClass" defaultValue="uk.co.dubit.graphics.render2D.Scene" />
 		</Binding>
 		<Binding name="DisplayObject2D" factory="uk.co.dubit.platform.scriptEngine.gameObject.GameObjectFactory" class="uk.co.dubit.platform.scriptEngine.gameObject.types.avatar.MovingGameObject">
 			<Attribute name="displayObjectClass" defaultValue="uk.co.dubit.graphics.render2D.DisplayObject2D" />
