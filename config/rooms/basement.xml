@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ChatRoom id="village" xmlns:xi="http://www.w3.org/2001/XInclude" startX="900" startY="600">
+<ChatRoom id="village" xmlns:xi="http://www.w3.org/2001/XInclude" startX="1200" startY="190">
 
 	<xi:include href="includes/room_config.xml"/>
 		
@@ -11,7 +11,7 @@
 	</Filters>
 	
 	<Sounds target="{Room.player}" id="sounds">
-		<StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" strength="0.3"/>
+		<!--  -->StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" strength="0.3"/-->
 	</Sounds>
 
 	<Scene id="scene" target="{Room.player}" viewportWidth="1024" viewportHeight="768" width="1500" height="900">
@@ -26,20 +26,22 @@
 	
 		<DisplayObject2D assetID="background_asset" mouseEnabled="false"/>
 		<DisplayObject2D id="click" assetID="click_asset" mouseEnabled="true" clickThrough="true" alpha="0"/>
-	 
+	 	<DisplayObject2D id="door" assetID="door_asset" x="1181" y="13" mouseEnabled="true" verbEnabled="true" useHandCursor="true" alpha="0" tooltip="Go to the Beanstalk"/>
+	 	
 		<ZSortingDisplayObject id="furniture">
 			<DisplayObject2D id="hay_8" assetID="hay_8_asset" x="565" y="({Room.hay_8.originY}+{295})" originX="207" originY="135" />
 			<DisplayObject2D id="hay_7" assetID="hay_7_asset" x="336" y="({Room.hay_7.originY}+{287})" originX="198" originY="195" />
 			<DisplayObject2D id="hay_6" assetID="hay_6_asset" x="-2" y="({Room.hay_6.originY}+{208})" originX="242" originY="409" />
-			<DisplayObject2D id="hay_5" assetID="hay_5_asset" x="292" y="({Room.hay_5.originY}+{414})" originX="296" originY="200" />
+			<DisplayObject2D id="hay_5" assetID="hay_5_asset" x="292" y="({Room.hay_5.originY}+{414})" originX="296" originY="220" />
 			<DisplayObject2D id="hay_4" assetID="hay_4_asset" x="133" y="({Room.hay_4.originY}+{489})" originX="399" originY="413" />
 			<DisplayObject2D id="hay_3" assetID="hay_3_asset" x="1077" y="({Room.hay_3.originY}+{325})" originX="181" originY="128" />
 			<DisplayObject2D id="hay_2" assetID="hay_2_asset" x="1392" y="({Room.hay_2.originY}+{310})" originX="258" originY="109" />
-			<DisplayObject2D id="hay_1" assetID="hay_1_asset" x="1650" y="({Room.hay_1.originY}+{465})" originX="456" originY="415" />
-			<DisplayObject2D id="beam_floor" assetID="beam_floor_asset" x="1816" y="({Room.beam_floor.originY}+{0})" originX="829" originY="505" />
-			<DisplayObject2D id="beam_roof" assetID="beam_roof_asset" x="891" y="({Room.beam_roof.originY}+{0})" originX="891" originY="1135" />
-			<DisplayObject2D id="wheel" assetID="wheel_asset" x="1072" y="({Room.wheel.originY}+{430})" originX="151" originY="287" />
+			<DisplayObject2D id="hay_1" assetID="hay_1_asset" x="1650" y="({Room.hay_1.originY}+{465})" originX="456" originY="295" />
+			<DisplayObject2D id="beam_floor" assetID="beam_floor_asset" x="1816" y="{Room.beam_floor.originY}" originX="829" originY="635" />
+			<DisplayObject2D id="beam_roof" assetID="beam_roof_asset" x="891" y="{Room.beam_roof.originY}" originX="891" originY="900" />
+			<DisplayObject2D id="wheel" assetID="wheel_asset" x="1072" y="({Room.wheel.originY}+{430})" originX="151" originY="237" />
 			<DisplayObject2D id="stool" assetID="stool_asset" x="851" y="({Room.stool.originY}+{515})" originX="46" originY="101" />
+			<DisplayObject2D id="stairs" assetID="stairs_asset" x="1165" y="295" originX="157" originY="167" />
 		</ZSortingDisplayObject>
 		
 		
@@ -51,6 +53,8 @@
 	</Scene>
 	
 	<Assets>
+        <Asset id="door_asset" url="images/basement/door.gif" />
+        <Asset id="stairs_asset" url="images/basement/stairs.png" />
         <Asset id="outside_asset" url="images/basement/outside.jpg" />
 		<Asset id="tree_asset" url="images/basement/tree.png" />
 		<Asset id="background_asset" url="images/basement/background.png" />
@@ -80,5 +84,8 @@
 		<MoveTo gameObject="{Room.player}" targetX="{Event.x}" targetY="{Event.y}" />
 	</Trigger>
 
+	<Trigger gameObject="{Room.door}" event="onUse">
+		<ChangeRoom roomName="beanstalk" />
+	</Trigger>
 	
 </ChatRoom>	

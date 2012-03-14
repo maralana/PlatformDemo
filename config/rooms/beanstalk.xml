@@ -6,7 +6,7 @@
 	<CollisionMap id="walkableArea" assetID="hit_asset" />
 
 	<Filters id="playerFilters">
-		<DepthFilter id="playerDepthFilter" scaleBack="0.3" scaleFront="0.7"/>
+		<DepthFilter id="playerDepthFilter" scaleBack="0.1" scaleFront="0.4"/>
 		<LightMapFilter assetID="light_filter_asset" />
 	</Filters>
 	
@@ -41,6 +41,7 @@
 	
 		<DisplayObject2D assetID="background_asset" mouseEnabled="false"/>
 		<DisplayObject2D id="click" assetID="click_asset" mouseEnabled="true" clickThrough="true" alpha="0"/>
+		<DisplayObject2D id="door" assetID="door_asset" x="911" y="467" mouseEnabled="true" verbEnabled="true" useHandCursor="true" alpha="0" tooltip="Go to the basement"/>
 	 
 		<ZSortingDisplayObject id="furniture">
 			<DisplayObject2D id="well" assetID="well_asset" x="1247" y="({Room.well.originY}+{429})" originY="140" mouseEnabled="true" useHandCursor="true" scale="0.95" tooltip="Ye Olde Well"/>
@@ -121,6 +122,7 @@
 		<Asset id="fore_left_asset" url="images/beanstalk/fore_left.png" />
 		<Asset id="fore_right_asset" url="images/beanstalk/fore_right.png" />
 		<Asset id="coll_1_asset" url="images/beanstalk/coll_1.png" />
+		<Asset id="door_asset" url="images/beanstalk/door.gif" />
 	</Assets>	
 	
 	<Triggers>
@@ -209,6 +211,10 @@
 		<SetValues target="{Room.mushroom_7}" clicked="false" />
 		<SetValues target="{Room.mushroom_10}" clicked="false" />
 	 </Trigger>
+	 
+	 <Trigger gameObject="{Room.door}" event="onUse">
+		<ChangeRoom roomName="basement" />
+	</Trigger>
 	
 	<GameObject id="collisionStatus" currentFrame="0"/>
 
