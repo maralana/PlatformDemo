@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ChatRoom id="village" xmlns:xi="http://www.w3.org/2001/XInclude" startX="1200" startY="190">
+<ChatRoom id="basement" xmlns:xi="http://www.w3.org/2001/XInclude" startX="1200" startY="190">
 
 	<xi:include href="includes/room_config.xml"/>
 		
@@ -26,7 +26,7 @@
 	
 		<DisplayObject2D assetID="background_asset" mouseEnabled="false"/>
 		<DisplayObject2D id="click" assetID="click_asset" mouseEnabled="true" clickThrough="true" alpha="0"/>
-	 	<DisplayObject2D id="door" assetID="door_asset" x="1181" y="13" mouseEnabled="true" verbEnabled="true" useHandCursor="true" alpha="0" tooltip="Go to the Beanstalk"/>
+	 	<DisplayObject2D id="door" assetID="door_asset" x="1181" y="13"  alpha="0" collidable="true" distance="200"/>
 	 	
 		<ZSortingDisplayObject id="furniture">
 			<DisplayObject2D id="hay_8" assetID="hay_8_asset" x="565" y="({Room.hay_8.originY}+{295})" originX="207" originY="135" />
@@ -45,14 +45,15 @@
 		</ZSortingDisplayObject>
 		
 		
-		<ParallaxLayer mouseEnabled="false" xm="1.2" ym="1">
-
+		<ParallaxLayer mouseEnabled="false" xm="1" ym="1">
+			<DisplayObject2D id="overlay" assetID="overlay_asset" />
 		</ParallaxLayer>
 		
 		<ZSortingDisplayObject id="playerMessages"/>
 	</Scene>
 	
 	<Assets>
+        <Asset id="overlay_asset" url="images/basement/overlay.png" />
         <Asset id="door_asset" url="images/basement/door.gif" />
         <Asset id="stairs_asset" url="images/basement/stairs.png" />
         <Asset id="outside_asset" url="images/basement/outside.jpg" />
@@ -84,7 +85,7 @@
 		<MoveTo gameObject="{Room.player}" targetX="{Event.x}" targetY="{Event.y}" />
 	</Trigger>
 
-	<Trigger gameObject="{Room.door}" event="onUse">
+	<Trigger gameObject="{Room.door}" event="onEnterCollision">
 		<ChangeRoom roomName="beanstalk" />
 	</Trigger>
 	

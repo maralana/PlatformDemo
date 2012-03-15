@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ChatRoom id="village" xmlns:xi="http://www.w3.org/2001/XInclude" startX="900" startY="600">
+<ChatRoom id="beanstalk" xmlns:xi="http://www.w3.org/2001/XInclude" startX="900" startY="600">
 
 	<xi:include href="includes/room_config.xml"/>
 		
@@ -15,7 +15,6 @@
 		<StreamingSound id="water_2" url="sounds/stream.mp3" play="false" looping="true" x="650" y="780" carry="300" strength="0.7"/>
 		<StreamingSound id="woodland_1" url="sounds/woodland.mp3" play="true" looping="true" strength="0.5"/>
 		<StreamingSound id="woodland_2" url="sounds/woodland.mp3" play="false" looping="true" strength="0.5"/>
-		<StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" strength="0.3"/>
 		<StreamingSound id="mushroom_12_sound" url="sounds/mushroom_12.mp3" play="false" looping="false" />
 		<StreamingSound id="mushroom_11_sound" url="sounds/mushroom_11.mp3" play="false" looping="false" />
 		<StreamingSound id="mushroom_10_sound" url="sounds/mushroom_10.mp3" play="false" looping="false" strength="2"/>
@@ -41,7 +40,7 @@
 	
 		<DisplayObject2D assetID="background_asset" mouseEnabled="false"/>
 		<DisplayObject2D id="click" assetID="click_asset" mouseEnabled="true" clickThrough="true" alpha="0"/>
-		<DisplayObject2D id="door" assetID="door_asset" x="911" y="467" mouseEnabled="true" verbEnabled="true" useHandCursor="true" alpha="0" tooltip="Go to the basement"/>
+		<DisplayObject2D id="door" assetID="door_asset" x="911" y="467" collidable="true" distance="80" alpha="0"/>
 	 
 		<ZSortingDisplayObject id="furniture">
 			<DisplayObject2D id="well" assetID="well_asset" x="1247" y="({Room.well.originY}+{429})" originY="140" mouseEnabled="true" useHandCursor="true" scale="0.95" tooltip="Ye Olde Well"/>
@@ -73,7 +72,7 @@
 		</ZSortingDisplayObject>
 		
 		<DisplayObject2D id="coll" assetID="coll_1_asset" x="912" y="517" collidable="true" distance="170" alpha="0"/>
-		
+		<DisplayObject2D id="coll2" assetID="coll_1_asset" x="75" y="600" collidable="true" distance="100" alpha="0"/>
 		<ParallaxLayer mouseEnabled="false" xm="1.2" ym="1">
 			<DisplayObject2D assetID="foreground_tree_3_asset" x="1160" y="0" />
 			<DisplayObject2D assetID="foreground_tree_2_asset" x="859" y="0" />
@@ -175,6 +174,10 @@
 		</GotoAndPlay>
 	</Trigger>
 	
+	<Trigger gameObject="{Room.coll2}" event="onEnterCollision">
+		<ChangeRoom roomID="cinderella" />
+	</Trigger>
+	
 	 <Trigger gameObject="{Room.mushroom_4}" event="onClick">
 		<GotoAndPlay gameObject="{Room.mushroom_4}" frame="2" />
 		<SetValues target="{Event.handler}" clicked="true"/>
@@ -212,7 +215,7 @@
 		<SetValues target="{Room.mushroom_10}" clicked="false" />
 	 </Trigger>
 	 
-	 <Trigger gameObject="{Room.door}" event="onUse">
+	 <Trigger gameObject="{Room.door}" event="onEnterCollision">
 		<ChangeRoom roomName="basement" />
 	</Trigger>
 	

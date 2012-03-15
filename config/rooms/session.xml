@@ -21,6 +21,11 @@
 	<xi:include href="includes/session/shops.xml"/>
 	<xi:include href="includes/session/skills.xml"/>	
 	
+	<Sounds target="{Room.player}" id="sounds">
+		<StreamingSound id="room_music" url="sounds/theme_music.mp3" play="true" looping="true" strength="0.3"/>
+	</Sounds>
+	
+	
 	<Triggers>
 		<onFixup>
 		</onFixup>
